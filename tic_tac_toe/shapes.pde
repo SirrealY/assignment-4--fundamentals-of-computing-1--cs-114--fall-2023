@@ -17,6 +17,15 @@ void drawBoard() {
   background(255);
   stroke(0);
   strokeWeight(2);
+  // Draw rectangles as outlines for each cell
+  for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < SIZE; j++) {
+      float x = i * CANVAS_SIZE / SIZE;
+      float y = j * CANVAS_SIZE / SIZE;
+      noFill();
+      rect(x, y, CANVAS_SIZE / SIZE, CANVAS_SIZE / SIZE);
+    }
+  }
 
   for (int i = 1; i < SIZE; i++) {
     line(i * CANVAS_SIZE / SIZE, 0, i * CANVAS_SIZE / SIZE, CANVAS_SIZE);

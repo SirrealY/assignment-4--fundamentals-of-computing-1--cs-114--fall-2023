@@ -81,20 +81,17 @@ boolean isSquareEmpty(int row, int col) {
 }
 
 void computerTurn(){
-  while (true) {
+ if(gameInProgress){
+    while (true) {
     int row = int(random(SIZE));
     int col = int(random(SIZE));
     if (isSquareEmpty(row, col)){
       gameBoard[row][col] = COMPUTER; 
-      makeMoves();
-      checkAndPrintWinner(COMPUTER);
-      if(isBoardFull()){
-        println("The board is full, it's a draw!");
-        gameInProgress = false;
-      }
-     break;
-    }
+      drawX(row,col);
+      break;
+   }
   }
+ }
 }
       
       
