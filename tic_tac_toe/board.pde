@@ -1,7 +1,7 @@
 int [][] gameBoard;
 
 void setGame() {
-  //Intializes the game board
+  //Initializes the game board
   gameBoard = new int[SIZE][SIZE];
   for (int i = 0; i < SIZE; i++) {
     for (int j = 0; j < SIZE; j++) {
