@@ -1,20 +1,16 @@
 void drawX(int row, int col) {
-  float cellSize = CANVAS_SIZE / SIZE;
-  float x = col * cellSize + cellSize / 2;
-  float y = row * cellSize + cellSize / 2;
-  float lineSize = cellSize / 2;
+  float x = col * cellSize ;
+  float y = row * cellSize ;
 
-  line(x - lineSize, y - lineSize, x + lineSize, y + lineSize);
-  line(x + lineSize, y - lineSize, x - lineSize, y + lineSize);
+  line(x, y, x + cellSize, y + cellSize);
+  line(x + cellSize, y , x , y + cellSize);
 }
 
 void drawO(int row, int col) {
-  float cellSize = CANVAS_SIZE / SIZE;
   float x = col * cellSize + cellSize / 2;
   float y = row * cellSize + cellSize / 2;
-  float radius = cellSize / 4;
-
-  ellipse(x, y, radius * 2, radius * 2);
+  float radius = cellSize * 0.8;
+  ellipse(x, y, radius , radius);
 }
 
 void drawBoard() {
