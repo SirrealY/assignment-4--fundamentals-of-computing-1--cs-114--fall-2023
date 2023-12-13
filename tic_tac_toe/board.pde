@@ -1,10 +1,11 @@
 int [][] gameBoard;
 
 void setGame() {
+  //Intializes the game board
   gameBoard = new int[SIZE][SIZE];
   for (int i = 0; i < SIZE; i++) {
     for (int j = 0; j < SIZE; j++) {
-      gameBoard[i][j] = EMPTY; // Initialize the game board with zeros
+      gameBoard[i][j] = EMPTY; // Initialize the game board with zeros and set Progress to true
     }
   }
   gameInProgress = true;
@@ -41,7 +42,7 @@ boolean checkWinner(int player) {
     return true; // Diagonal win from top-right to bottom-left
   }
 
-  return false; // No winning combinations found
+  return false; // No winning combos found, no winner
 }
 
 void checkAndPrintWinner(int player) {
@@ -54,7 +55,6 @@ void checkAndPrintWinner(int player) {
   } 
 }
 
-
 void userTurn(int row, int col) {
   if(isSquareEmpty(row, col)){
     gameBoard[row][col] = USER; 
@@ -62,8 +62,7 @@ void userTurn(int row, int col) {
   }
 }
 
-
-
+//Method to draw Oss and X shapes on board for USER and COMPUTER.
 void makeMoves() {
   for (int i = 0; i < SIZE;i++){
     for(int j = 0; j < SIZE;j++){

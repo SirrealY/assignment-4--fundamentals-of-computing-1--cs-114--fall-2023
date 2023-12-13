@@ -12,12 +12,12 @@ void draw() {
 
 void keyPressed() {
   if (!gameInProgress) {
-    println("Game over");
+    println("Game over");//If gmae 
     return;
   }
 
   char keyPressedChar = key;
-  int index = keyPressedChar - '0';
+  int index = keyPressedChar - '0';//Converts the keypressed to a position on the game board 0-8 
 
   if (index >= 0 && index <= 8) {
     int row = index / SIZE;
